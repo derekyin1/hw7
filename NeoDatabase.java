@@ -19,7 +19,9 @@ public class NeoDatabase implements java.util.Collection<NearEarthObject>{
   }
 
   public void addAll(String queryURL) throws IllegalArgumentException{
-
+    DataSource ds = DataSource.connectJSON(queryURL);
+    ds.load();
+    database = ds.fetchList("near_earth_objects", "neo_reference_id", "name", "absolute_magnitue_h", "estimated_diameter_min", "estimated_diameter_max", "is_potentially_hazardous_asteroid", "epoch_date_close_approach", "kilometers", "orbiting_body");
   }
 
   public void sort(Comparator<NearEarthObject> comp) throws IllegalArgumentException{
