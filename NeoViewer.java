@@ -1,3 +1,9 @@
+/** Derek Yin 113251504 Recitation Section 1
+*  This class runs a terminal-driven menu that allows a user to add pages from the NASA database to this program and sort them. 
+*
+*  @author Derek Yin
+*/
+
 import java.util.Scanner;
 public class NeoViewer{
 
