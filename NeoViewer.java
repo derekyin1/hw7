@@ -44,6 +44,7 @@ public class NeoViewer{
             try{
               database.sort(new ReferenceIDComparator());
               System.out.println("Table sorted on reference ID.");
+              sorting = false;
             }
             catch (IllegalArgumentException e){
               System.out.println("Invalid input.");
@@ -55,6 +56,7 @@ public class NeoViewer{
             try{
               database.sort(new DiameterComparator());
               System.out.println("Table sorted on diameter.");
+              sorting = false;
             }
             catch (IllegalArgumentException e){
               System.out.println("Invalid input.");
@@ -66,6 +68,7 @@ public class NeoViewer{
             try{
               database.sort(new ApproachDateComparator());
               System.out.println("Table sorted on approach date.");
+              sorting = false;
             }
             catch (IllegalArgumentException e){
               System.out.println("Invalid input.");
@@ -78,6 +81,7 @@ public class NeoViewer{
             try{
               database.sort(new MissDistanceComparator());
               System.out.println("Table sorted on miss distance.");
+              sorting = false;
             }
             catch (IllegalArgumentException e){
               System.out.println("Invalid input.");
@@ -93,7 +97,7 @@ public class NeoViewer{
         }
       }
       else if (s.equalsIgnoreCase("P")){
-
+        database.printTable();
       }
       else if (s.equalsIgnoreCase("Q")){
         System.out.println("Program terminating normally...");

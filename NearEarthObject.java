@@ -1,4 +1,5 @@
 import java.util.*;
+import java.text.*;
 public class NearEarthObject{
   private int referenceID;
   private String name;
@@ -29,7 +30,9 @@ public class NearEarthObject{
   }
 
   public String getName(){
-    return name;
+    String[] tokens = name.split("\\(");
+    String str = "(" + tokens[1];
+    return str;
   }
 
   public void setName(String newName){
@@ -52,24 +55,27 @@ public class NearEarthObject{
     averageDiameter = newDiameter;
   }
 
-  public boolean getIsDangerous(){
-    return isDangerous;
+  public String getIsDangerous(){
+    if (isDangerous) return "true";
+    return "false";
   }
 
   public void setIsDangerous(boolean newBool){
     isDangerous = newBool;
   }
 
-  public Date getClosestApproachDate(){
-    return closestApproachDate;
+  public String getClosestApproachDate(){
+    SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yy");
+    String strDate = dateFormat.format(closestApproachDate);
+    return strDate;
   }
 
   public void setClosestApproachDate(Date newDate){
     closestApproachDate = newDate;
   }
 
-  public double getMissDistance(){
-    return missDistance;
+  public int getMissDistance(){
+    return (int) missDistance;
   }
 
   public void setMissDistance(double newDistance){
