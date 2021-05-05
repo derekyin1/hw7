@@ -1,5 +1,7 @@
 import java.util.*;
-public class NeoDatabase implements java.util.Collection<NearEarthObject>{
+import big.data.DataSource;
+
+public class NeoDatabase{
   public static final String API_KEY = "wOEXEZpeeV3MZ4qNJ3mT6QKnEgJ3LkE1azcfFfCy";
 
   public static final String API_ROOT = "https://api.nasa.gov/neo/rest/v1/neo/browse?";
@@ -26,10 +28,16 @@ public class NeoDatabase implements java.util.Collection<NearEarthObject>{
 
   public void sort(Comparator<NearEarthObject> comp) throws IllegalArgumentException{
     if (comp == null) throw new IllegalArgumentException();
-    Collection.sort(database, comp);
+    Collections.sort(database, comp);
   }
 
   public void printTable(){
+    String str = "     ID   |      Name    | Mag. | Diameter | Danger | Close Date | Miss Dist | Orbits\n" +
+            "======================================================================================";
+    for (NearEarthObject n : database){
+
+    }
 
   }
+
 }

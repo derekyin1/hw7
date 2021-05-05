@@ -15,7 +15,7 @@ public class NearEarthObject{
     absoluteMagnitude = absoluteMagnitudeInit;
     averageDiameter = (minDiameter + maxDiameter) / 2;
     isDangerous = isDangerousInit;
-    closestApproachDate = closestDateTimestamp;
+    closestApproachDate = new Date(closestDateTimestamp);
     missDistance = missDistanceInit;
     orbitingBody = orbitingBodyInit;
   }

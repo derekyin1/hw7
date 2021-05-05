@@ -1,7 +1,10 @@
 public class ApproachDateComparator implements java.util.Comparator<NearEarthObject>{
-  public int compare(Object o1, Object o2){
-    NearEarthObject n1 = (NearEarthObject) o1;
-    NearEarthObject n2 = (NearEarthObject) o2;
+
+  public ApproachDateComparator(){
+
+  }
+
+  public int compare(NearEarthObject n1, NearEarthObject n2){
     return n1.getClosestApproachDate().compareTo(n2.getClosestApproachDate());
   }
 }
